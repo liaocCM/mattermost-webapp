@@ -52,7 +52,7 @@ export default class UserProfile extends PureComponent {
 
         const name = overwriteName || displayName || '...';
         if (disablePopover) {
-            return <div className='user-popover'>{name}</div>;
+            return <div className='user-popover'>{name + 'hello'}</div>;
         }
 
         let placement = 'right';
@@ -96,7 +96,7 @@ export default class UserProfile extends PureComponent {
                 }
             >
                 <div className='user-popover'>
-                    {name}
+                    {name + 'hello2'}
                     {tag}
                 </div>
             </OverlayTrigger>
