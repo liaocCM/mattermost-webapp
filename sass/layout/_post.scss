@@ -2042,3 +2042,50 @@
     top: 0;
     width: 0;
 }
+
+.recieved {
+  padding: 8px 40vw 0 1.5em;
+  .post__body{
+    background-color: #7cd39636
+  }
+  .post__content{
+   display: flex;
+   // justify-content: flex-start;
+  }
+}
+.post.same--root.same--user.recieved{
+  padding: 8px 40vw 0 1.5em;
+}
+.post.same--root.same--user.sent {
+  padding: 8px .5em 0 50vw;
+}
+
+.sent {
+  padding: 8px .5em 0 50vw;
+  .post__content{
+   display: flex;
+   justify-content: flex-end;
+  }
+  .post__body {
+    text-align: right;
+  }
+  .post__header {
+    flex-direction: row-reverse;
+    padding: 0 !important;
+    .col__name {
+      margin-left: 7px;
+    }
+  }
+  .col.col__reply{
+    right: unset !important;
+    left: 8vw;
+  }
+}
+
+.post.same--root.same--user {
+  margin-top: 5px;
+}
+
+.post__body {
+  border-radius: 12px;
+}

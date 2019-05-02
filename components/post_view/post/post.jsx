@@ -236,12 +236,18 @@ export default class Post extends React.PureComponent {
         if (this.props.center) {
             centerClass = 'center';
         }
-
+        let classCC = this.getClassName(post, isSystemMessage, fromWebhook, fromAutoResponder);
+        if(classCC.includes('current')){
+          classCC += ' sent'
+        }else {
+          classCC += 'recieved'
+        }
+        // console.log(classCC);
         return (
             <div
                 ref={this.getRef}
                 id={'post_' + post.id}
-                className={this.getClassName(post, isSystemMessage, fromWebhook, fromAutoResponder)}
+                className={classCC}
                 onMouseOver={this.setHover}
                 onMouseLeave={this.unsetHover}
                 onTouchStart={this.setHover}
@@ -250,11 +256,12 @@ export default class Post extends React.PureComponent {
                     id='postContent'
                     className={'post__content ' + centerClass}
                 >
+                    {!classCC.includes('current')?
                     <div className='post__img'>
                         {profilePic}
-                    </div>
+                    </div>:null }
                     <div>
-                        <PostHeader
+                        {!classCC.includes('same') && <PostHeader
                             post={post}
                             handleCommentClick={this.handleCommentClick}
                             handleDropdownOpened={this.handleDropdownOpened}
@@ -263,7 +270,7 @@ export default class Post extends React.PureComponent {
                             replyCount={this.props.replyCount}
                             showTimeWithoutHover={!hideProfilePicture}
                             hover={this.state.hover}
-                        />
+                        />}
                         <PostBody
                             post={post}
                             handleCommentClick={this.handleCommentClick}
@@ -272,6 +279,23 @@ export default class Post extends React.PureComponent {
                             isFirstReply={this.props.isFirstReply}
                         />
                     </div>
+                    {/*classCC.includes('current')?
+                    <div className='post__img'>
+                        {profilePic}
+                    </div>:null
+                    {!classCC.includes('same') && <PostHeader
+                        post={post}
+                        handleCommentClick={this.handleCommentClick}
+                        handleDropdownOpened={this.handleDropdownOpened}
+                        compactDisplay={this.props.compactDisplay}
+                        isFirstReply={this.props.isFirstReply}
+                        replyCount={this.props.replyCount}
+                        showTimeWithoutHover={!hideProfilePicture}
+                        hover={this.state.hover}
+                    />}
+
+
+                    */}
                 </div>
             </div>
         );

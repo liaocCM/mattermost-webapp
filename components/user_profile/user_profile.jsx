@@ -96,7 +96,7 @@ export default class UserProfile extends PureComponent {
                 }
             >
                 <div className='user-popover'>
-                    {name + 'hello'}
+                    {name}
                     {tag}
                 </div>
             </OverlayTrigger>
