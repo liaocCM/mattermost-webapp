@@ -2052,6 +2052,10 @@
    display: flex;
    // justify-content: flex-start;
   }
+  .col.col__reply{
+    right: 8vw;
+    left: unset !important;
+  }
 }
 .post.same--root.same--user.recieved{
   padding: 8px 40vw 0 1.5em;

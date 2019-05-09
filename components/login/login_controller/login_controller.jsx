@@ -620,8 +620,8 @@ class LoginController extends React.Component {
                 </div>
             );
         }
-
-        if (usernameSigninEnabled || emailSigninEnabled) {
+        
+        if (false && (usernameSigninEnabled || emailSigninEnabled)) {
             loginControls.push(
                 <div
                     id='login_forgot'

@@ -1124,14 +1124,14 @@
 
     .footer,
     .footer-pane {
-        height: 187px;
+        // height: 187px;
     }
 
     .footer-pane {
         .footer-link {
             display: block;
             line-height: 1.7;
-            padding: 0;
+            padding-left: 0px;
             text-align: right;
             width: 100%;
 

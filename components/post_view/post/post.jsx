@@ -242,7 +242,6 @@ export default class Post extends React.PureComponent {
         }else {
           classCC += 'recieved'
         }
-        // console.log(classCC);
         return (
             <div
                 ref={this.getRef}
@@ -293,8 +292,6 @@ export default class Post extends React.PureComponent {
                         showTimeWithoutHover={!hideProfilePicture}
                         hover={this.state.hover}
                     />}
-
-
                     */}
                 </div>
             </div>
