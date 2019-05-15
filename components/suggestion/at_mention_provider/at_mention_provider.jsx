@@ -131,7 +131,8 @@ export default class AtMentionProvider extends Provider {
     }
 
     users() {
-        const specialMentions = this.specialMentions();
+        //only need localMembers #texliao
+        //const specialMentions = this.specialMentions();
 
         const localMembers = this.localMembers();
 
@@ -146,10 +147,12 @@ export default class AtMentionProvider extends Provider {
         const localAndRemoteMembers = localMembers.concat(remoteMembers).sort((a, b) =>
             a.username.localeCompare(b.username)
         );
+        //only need localMembers #texliao
+        //const remoteNonMembers = this.remoteNonMembers().filter((item) => !localUserIds[item.id]);
 
-        const remoteNonMembers = this.remoteNonMembers().filter((item) => !localUserIds[item.id]);
-
-        return localAndRemoteMembers.concat(specialMentions).concat(remoteNonMembers);
+        //only need localMembers #texliao
+        return localAndRemoteMembers
+        //return localAndRemoteMembers.concat(specialMentions).concat(remoteNonMembers);
     }
 
     // updateMatches invokes the resultCallback with the metadata for rendering at mentions
